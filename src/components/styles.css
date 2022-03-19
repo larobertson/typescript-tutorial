@@ -1,6 +1,6 @@
 .input {
   display: flex;
-  width: 90%;
+  width: 95%;
   position: relative;
   align-items: center;
 }
@@ -43,20 +43,46 @@
   box-shadow: 0 0 5px black;
 }
 
+.container {
+  display: flex;
+  width: 95%;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .todos {
   display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  flex-wrap: wrap;
+  width: 47.5%;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #bdcaff;
+  /* #BDCAFF */
+}
+
+.todos__heading {
+  font-size: 30px;
+  color: black;
+}
+
+.todos__heading.remove__heading {
+  font-size: 30px;
+  color: white;
 }
 
 .todos__single {
   display: flex;
-  width: 29.5%;
   border-radius: 5px;
   padding: 20px;
   margin-top: 15px;
   background-color: #bcf584;
+  transition: 0.2s;
+}
+
+.todos__single:hover {
+  box-shadow: 0 0 5px black;
+  transform: scale(1.03);
 }
 
 .todos__single--text {
@@ -76,14 +102,38 @@
   cursor: pointer;
 }
 
+.remove {
+  background-color: #5b6aa8;
+}
+
+.dragactive {
+  background-color: #e0e6ff;
+}
+
+.dragcomplete {
+  background-color: #404e86;
+}
+
+.drag {
+  box-shadow: 0 0 20px black;
+}
+
+@media (max-width: 1100px) {
+  .todos {
+    width: 45%;
+  }
+}
+
 @media (max-width: 700px) {
   .input {
     width: 95%;
   }
   .todos {
     width: 95%;
+    margin-bottom: 10px;
   }
-  .todos__single {
-    width: 100%;
+  .container {
+    width: 95%;
+    flex-direction: column;
   }
 }
